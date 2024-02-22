@@ -3,36 +3,30 @@ package models;
 public class ResponseMessage<T> {
     private String clientMsg;
     private String serverMsg;
-    private Integer status;
     private T data;
 
-    public ResponseMessage(String clientMsg, String serverMsg, Integer status, T data) {
+    public ResponseMessage(String clientMsg, String serverMsg, T data) {
         this.clientMsg = clientMsg;
         this.serverMsg = serverMsg;
-        this.status = status;
         this.data = data;
     }
 
-    public ResponseMessage(String clientMsg, Integer status) {
+    public ResponseMessage(String clientMsg) {
         this.clientMsg = clientMsg;
-        this.status = status;
     }
 
-    public ResponseMessage(String clientMsg, String serverMsg, Integer status) {
+    public ResponseMessage(String clientMsg, String serverMsg) {
         this.clientMsg = clientMsg;
         this.serverMsg = serverMsg;
-        this.status = status;
     }
 
-    public ResponseMessage(String clientMsg, T data, Integer status) {
+    public ResponseMessage(String clientMsg, T data) {
         this.clientMsg = clientMsg;
         this.data = data;
-        this.status = status;
     }
 
-    public ResponseMessage(T data, Integer status) {
+    public ResponseMessage(T data) {
         this.data = data;
-        this.status = status;
     }
 
     public String getClientMsg() {
@@ -59,20 +53,11 @@ public class ResponseMessage<T> {
         this.data = data;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
         return "ResponseMessage{" +
                 "clientMsg='" + clientMsg + '\'' +
                 ", serverMsg='" + serverMsg + '\'' +
-                ", status=" + status +
                 ", data=" + data +
                 '}';
     }
